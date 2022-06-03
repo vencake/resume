@@ -8,6 +8,9 @@
     "lint": "next lint --fix",
     "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
+  "resolutions": {
+    "**/@types/react": "17.0.2"
+  },
   "dependencies": {
     "@beam-australia/react-env": "^3.1.1",
     "@emotion/css": "^11.9.0",
