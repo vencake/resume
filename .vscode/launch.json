@@ -14,7 +14,7 @@
       "name": "Debug: Client",
       "type": "node-terminal",
       "request": "launch",
-      "command": "pnpm run dev:client",
+      "command": "yarn run dev:client",
       "console": "integratedTerminal",
       "serverReadyAction": {
         "pattern": "started server on .+, url: (https?://.+)",

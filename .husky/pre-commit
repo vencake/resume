@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm install
-pnpm run lint
-pnpm run format
+yarn install
+yarn run lint
+yarn run format
