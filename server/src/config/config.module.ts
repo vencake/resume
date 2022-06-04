@@ -20,11 +20,12 @@ const validationSchema = Joi.object({
   PUBLIC_URL: Joi.string().default('http://localhost:3000'),
 
   // Database
-  POSTGRES_HOST: Joi.string().required(),
+  DATABASE_URL: Joi.string(),
+  POSTGRES_HOST: Joi.string(),
   POSTGRES_PORT: Joi.number().default(5432),
-  POSTGRES_DB: Joi.string().required(),
-  POSTGRES_USER: Joi.string().required(),
-  POSTGRES_PASSWORD: Joi.string().required(),
+  POSTGRES_DB: Joi.string(),
+  POSTGRES_USER: Joi.string(),
+  POSTGRES_PASSWORD: Joi.string(),
   POSTGRES_SSL_CERT: Joi.string().allow(''),
 
   // Auth
@@ -49,7 +50,9 @@ const validationSchema = Joi.object({
   STORAGE_URL_PREFIX: Joi.string().allow(''),
   STORAGE_ACCESS_KEY: Joi.string().allow(''),
   STORAGE_SECRET_KEY: Joi.string().allow(''),
-});
+})
+  .xor('DATABASE_URL', 'POSTGRES_HOST')
+  .with('POSTGRES_HOST', ['POSTGRES_PORT', 'POSTGRES_DB', 'POSTGRES_USER', 'POSTGRES_PASSWORD']);
 
 @Module({
   imports: [

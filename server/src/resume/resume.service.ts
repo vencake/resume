@@ -3,9 +3,10 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
+import { createWriteStream, mkdirSync } from 'fs';
 import { pick, sample, set } from 'lodash';
 import { nanoid } from 'nanoid';
-import { extname } from 'path';
+import { extname, join } from 'path';
 import { Repository } from 'typeorm';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
@@ -29,14 +30,21 @@ export class ResumeService {
     private configService: ConfigService,
     private usersService: UsersService
   ) {
-    this.s3Client = new S3({
-      endpoint: configService.get<string>('storage.endpoint'),
-      region: configService.get<string>('storage.region'),
-      credentials: {
-        accessKeyId: configService.get<string>('storage.accessKey'),
-        secretAccessKey: configService.get<string>('storage.secretKey'),
-      },
-    });
+    if (
+      configService.get<string>('storage.endpoint') &&
+      configService.get<string>('storage.region') &&
+      configService.get<string>('storage.accessKey') &&
+      configService.get<string>('storage.secretKey')
+    ) {
+      this.s3Client = new S3({
+        endpoint: configService.get<string>('storage.endpoint'),
+        region: configService.get<string>('storage.region'),
+        credentials: {
+          accessKeyId: configService.get<string>('storage.accessKey'),
+          secretAccessKey: configService.get<string>('storage.secretKey'),
+        },
+      });
+    }
   }
 
   async create(createResumeDto: CreateResumeDto, userId: number) {
@@ -230,19 +238,27 @@ export class ResumeService {
   async uploadPhoto(id: number, userId: number, file: Express.Multer.File) {
     const resume = await this.findOne(id, userId);
 
-    const urlPrefix = this.configService.get<string>('storage.urlPrefix');
     const filename = new Date().getTime() + extname(file.originalname);
-    const key = `uploads/${userId}/${id}/${filename}`;
-
-    await this.s3Client.send(
-      new PutObjectCommand({
-        Bucket: this.configService.get<string>('storage.bucket'),
-        Key: key,
-        Body: file.buffer,
-        ACL: 'public-read',
-      })
-    );
-
+    const uploadDir = `uploads/${userId}/${id}`;
+    const key = `${uploadDir}/${filename}`;
+    const urlPrefix = this.configService.get<string>('storage.urlPrefix');
+    if (this.s3Client) {
+      await this.s3Client.send(
+        new PutObjectCommand({
+          Bucket: this.configService.get<string>('storage.bucket'),
+          Key: key,
+          Body: file.buffer,
+          ACL: 'public-read',
+        })
+      );
+    } else {
+      const staticDir = join(__dirname, '..', 'assets');
+      mkdirSync(`${staticDir}/${uploadDir}`, { recursive: true });
+      createWriteStream(`${staticDir}/${key}`).write(file.buffer, (err) => {
+        console.log(err);
+      });
+    }
+    console.log(urlPrefix);
     const publicUrl = urlPrefix + key;
 
     const updatedResume = set(resume, 'basics.photo.url', publicUrl);
@@ -257,12 +273,14 @@ export class ResumeService {
     const publicUrl = resume.basics.photo.url;
     const key = publicUrl.replace(urlPrefix, '');
 
-    await this.s3Client.send(
-      new DeleteObjectCommand({
-        Bucket: this.configService.get<string>('storage.bucket'),
-        Key: key,
-      })
-    );
+    if (this.s3Client) {
+      await this.s3Client.send(
+        new DeleteObjectCommand({
+          Bucket: this.configService.get<string>('storage.bucket'),
+          Key: key,
+        })
+      );
+    }
 
     const updatedResume = set(resume, 'basics.photo.url', '');
 

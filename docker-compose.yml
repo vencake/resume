@@ -5,6 +5,7 @@ services:
     image: postgres:14.2-alpine
     container_name: postgres
     environment:
+      - DATABASE_URL=
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
