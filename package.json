@@ -5,8 +5,7 @@
   "workspaces": [
     "schema",
     "client",
-    "server",
-    "docs"
+    "server"
   ],
   "config": {
     "commitizen": {
@@ -14,8 +13,8 @@
     }
   },
   "scripts": {
-    "heroku-postbuild": "npx playwright install",
-    "heroku-cleanup": "npx playwright install",
+    "heroku-postbuild": "npx playwright install chromium",
+    "heroku-cleanup": "npx playwright install chromium",
     "prepare": "husky install",
     "release": "standard-version",
     "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
@@ -23,7 +22,6 @@
     "dev:schema": "yarn workspace @reactive-resume/schema dev",
     "dev:server": "yarn workspace @reactive-resume/server start:debug",
     "dev:client": "yarn workspace @reactive-resume/client dev",
-    "dev:docs": "yarn workspace docs start",
     "dev": "env-cmd --silent concurrently --kill-others \"yarn run dev:*\"",
     "build:schema": "yarn workspace @reactive-resume/schema build",
     "build:server": "yarn workspace @reactive-resume/server build",
