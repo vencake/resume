@@ -26,11 +26,9 @@
     "build:schema": "yarn workspace @reactive-resume/schema build",
     "build:server": "yarn workspace @reactive-resume/server build",
     "build:client": "yarn workspace @reactive-resume/client build",
-    "build:docs": "yarn workspace docs build",
     "build": "env-cmd --silent concurrently \"yarn run build:*\"",
     "start:server": "yarn workspace @reactive-resume/server start:prod",
     "start:client": "yarn workspace @reactive-resume/client start",
-    "start:docs": "yarn workspace docs serve",
     "start": "env-cmd --silent concurrently --kill-others \"yarn run start:*\""
   },
   "dependencies": {
