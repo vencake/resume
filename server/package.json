@@ -44,7 +44,6 @@
     "passport-local": "^1.0.0",
     "pdf-lib": "^1.17.1",
     "pg": "^8.7.3",
-    "playwright-chromium": "1.21.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.5",
