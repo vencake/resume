@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "react-env --prefix PUBLIC -- next dev",
     "build": "next build && npm run sitemap",
-    "start": "react-env --prefix PUBLIC -- next start -p 8000",
+    "start": "react-env --prefix PUBLIC -- next start -p $PORT -h 0.0.0.0",
     "lint": "next lint --fix",
     "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
