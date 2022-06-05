@@ -13,7 +13,6 @@
     }
   },
   "scripts": {
-    "heroku-postbuild": "npx playwright install chromium",
     "heroku-cleanup": "npx playwright install chromium",
     "prepare": "husky install",
     "release": "standard-version",
