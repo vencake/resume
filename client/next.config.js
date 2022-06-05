@@ -23,6 +23,13 @@ const nextConfig = {
           destination: 'http://localhost:3100/:path*',
         },
       ];
+    } else {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'http://localhost:3100/:path*',
+        },
+      ];
     }
 
     return [];
