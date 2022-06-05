@@ -13,7 +13,6 @@
     }
   },
   "scripts": {
-    "heroku-cleanup": "npx playwright install chromium",
     "prepare": "husky install",
     "release": "standard-version",
     "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
