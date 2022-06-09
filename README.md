@@ -1,13 +1,13 @@
-<img src="https://github.com/AmruthPillai/Reactive-Resume/blob/main/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
+<img src="https://github.com/vencake/resume/blob/main/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
 
-[![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/releases)
-[![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE)
+[![Project Version](https://img.shields.io/github/package-json/v/vencake/resume/?style=flat-square)](https://github.com/vencake/resume/releases)
+[![Project License](https://img.shields.io/github/license/vencake/resume?style=flat-square)](https://github.com/vencake/resume/blob/main/LICENSE)
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://translate.rxresu.me)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square)](https://hub.docker.com/r/amruthpillai/reactive-resume)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/AmruthPillai/Reactive-Resume/Build%20and%20Push%20Docker%20Image?label=docker%20build&style=flat-square)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume?ref=badge_shield)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vencake/resume/Build%20and%20Push%20Docker%20Image?label=docker%20build&style=flat-square)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvencake%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvencake%2Fresume?ref=badge_shield)
 
 ## [Go to App](https://rxresu.me) | [Docs](https://docs.rxresu.me)
 
@@ -24,10 +24,7 @@ You have complete control over what goes into your resume, how it looks, what co
   - [Languages](#languages)
   - [Tutorial](#tutorial)
   - [Build from Source](#build-from-source)
-  - [Contributing](#contributing)
   - [Report Bugs and Feature Requests](#report-bugs-and-feature-requests)
-  - [Donations](#donations)
-    - [💸 PayPal](#-paypal)
   - [Infrastructure](#infrastructure)
   - [Contributors Wall](#contributors-wall)
   - [License](#license)
@@ -103,13 +100,7 @@ NOTE: Be sure to merge the latest from `main` before making a pull request!
 
 ## Report Bugs and Feature Requests
 
-Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in Reactive Resume. Please check before creating new issues as there might already be one.
-
-## Donations
-
-Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
-
-### [💸 PayPal](https://paypal.me/RajaRajanA)
+Use the [GitHub Issues](https://github.com/vencake/resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in Reactive Resume. Please check before creating new issues as there might already be one.
 
 ## Infrastructure
 
@@ -125,17 +116,10 @@ Reactive Resume would be nothing without the folks who supported me and kept the
   <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
 </a>
 
-## Contributors Wall
-<a href="https://github.com/AmruthPillai/Reactive-Resume/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume" />
-</a>
-
-
-_Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume) plugin to update because it's refreshed once a day._
+_Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image?repo=vencake/resume) plugin to update because it's refreshed once a day._
 
 ## License
 
 Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
 
 _By the community, for the community._  
-A passion project by [Amruth Pillai](https://amruthpillai.com/)
