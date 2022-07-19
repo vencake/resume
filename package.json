@@ -13,8 +13,7 @@
     }
   },
   "scripts": {
-    "heroku-postbuild": "npm install -g env-cmd concurrently && yarn build",
-    "heroku-cleanup": "rm -rf ./node_modules ./server/node_modules ./client/node_modules ./schema/node_modules",
+    "heroku-cleanup": "rm -rf ./node_modules ./server/node_modules ./client/node_modules ./schema/node_modules && npm install -g env-cmd concurrently",
     "prepare": "husky install",
     "release": "standard-version",
     "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
