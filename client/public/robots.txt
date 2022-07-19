@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://rxresu.me
+Host: https://vencake.heroku.app
 
 # Sitemaps
-Sitemap: https://rxresu.me/sitemap.xml
+Sitemap: https://vencake.heroku.app/sitemap.xml

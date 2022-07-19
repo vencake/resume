@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://rxresu.me',
+  siteUrl: 'https://vencake.heroku.app',
   changefreq: 'monthly',
   generateRobotsTxt: true,
 };

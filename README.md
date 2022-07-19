@@ -9,7 +9,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vencake/resume/Build%20and%20Push%20Docker%20Image?label=docker%20build&style=flat-square)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvencake%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvencake%2Fresume?ref=badge_shield)
 
-## [Go to App](https://rxresu.me) | [Docs](https://docs.rxresu.me)
+## [Go to App](https://vencake.heroku.app) | [Docs](https://docs.rxresu.me)
 
 Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
 

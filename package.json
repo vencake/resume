@@ -28,7 +28,7 @@
     "build": "env-cmd --silent concurrently \"yarn run build:*\"",
     "start:server": "yarn workspace @reactive-resume/server start:prod",
     "start:client": "yarn workspace @reactive-resume/client start",
-    "start": "env-cmd --silent concurrently --kill-others \"yarn run start:*\""
+    "start": "yarn run start:*"
   },
   "dependencies": {
     "concurrently": "^7.1.0",

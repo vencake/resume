@@ -14,7 +14,7 @@ export class HealthController {
   check() {
     return this.health.check([
       () => this.db.pingCheck('database'),
-      () => this.http.pingCheck('app', 'https://rxresu.me'),
+      () => this.http.pingCheck('app', 'https://vencake.heroku.app'),
       () => this.http.pingCheck('docs', 'https://docs.rxresu.me'),
     ]);
   }
